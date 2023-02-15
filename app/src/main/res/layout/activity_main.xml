@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECC8AF"
+    android:orientation="vertical"
+    tools:context=".ASM.MainActivity">
+
+    <!-- avt -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="21dp"
+            app:cardCornerRadius="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.044"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/avt" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <!-- end avt -->
+
+        <!-- title -->
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/sanbold"
+            android:gravity="center"
+            android:text="BLACKPINK"
+            android:textColor="@color/black"
+            android:textSize="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toEndOf="@+id/cardView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title2"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/sanbold"
+            android:gravity="center"
+            android:text="PETS"
+            android:textColor="#FF8B6A"
+            android:textSize="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_title"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!-- end title -->
+
+        <!-- search -->
+        <EditText
+            android:id="@+id/edt_search"
+            android:layout_width="380dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/radiustext"
+            android:drawableLeft="@drawable/search"
+            android:drawablePadding="15dp"
+            android:ems="10"
+            android:fontFamily="@font/sannormal"
+            android:hint="Search..."
+            android:inputType="textPersonName"
+            android:paddingLeft="15dp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.516"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!-- dog -->
+        <TextView
+            android:id="@+id/tv_dog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/sanbold"
+            android:text="Dog"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.271"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_dog" />
+
+        <Button
+            android:id="@+id/btn_dog"
+            android:layout_width="85dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="185dp"
+            android:background="@drawable/dog"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:onClick="btn_dogClick"
+            app:layout_constraintHorizontal_bias="0.233"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/tv_cat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/sanbold"
+            android:text="Cat"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.772"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_cat" />
+
+        <Button
+            android:id="@+id/btn_cat"
+            android:layout_width="85dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="185dp"
+            android:background="@drawable/cat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.812"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_list"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="match_parent" />
+
+
+    <!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        app:cardCornerRadius="15dp"-->
+<!--        android:layout_marginTop="21dp"-->
+<!--        app:cardBackgroundColor="@color/white">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="170dp"-->
+<!--                android:background="@drawable/dalgom" />-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:paddingLeft="20dp"-->
+<!--                android:orientation="vertical">-->
+<!--                <ImageView-->
+<!--                    android:id="@+id/image_view"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="end"-->
+<!--                    android:paddingTop="15dp"-->
+<!--                    android:paddingRight="15dp"-->
+<!--                    android:src="@drawable/heart" />-->
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_name"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/sanboldnormal"-->
+<!--                    android:text="DALGOM"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="24dp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_loai"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/sanboldnormal"-->
+<!--                    android:text="Maltese"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20dp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_age"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/sanboldnormal"-->
+<!--                    android:text="5 years old"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="18dp" />-->
+<!--            </LinearLayout>-->
+
+
+<!--        </LinearLayout>-->
+<!--    </androidx.cardview.widget.CardView>-->
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        app:cardCornerRadius="15dp"-->
+<!--        android:layout_marginTop="21dp"-->
+<!--        app:cardBackgroundColor="@color/white">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="170dp"-->
+<!--                android:background="@drawable/leo" />-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:paddingLeft="20dp"-->
+<!--                android:orientation="vertical">-->
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="end"-->
+<!--                    android:paddingTop="15dp"-->
+<!--                    android:paddingRight="15dp"-->
+<!--                    android:src="@drawable/heart" />-->
+<!--                <TextView-->
+
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/sanboldnormal"-->
+<!--                    android:text="LEO"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="24dp" />-->
+
+<!--                <TextView-->
+
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/sanboldnormal"-->
+<!--                    android:text="Scottish Fold"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20dp" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/sanboldnormal"-->
+<!--                    android:text="4 years old"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="18dp" />-->
+<!--            </LinearLayout>-->
+
+
+<!--        </LinearLayout>-->
+
+<!--    </androidx.cardview.widget.CardView>-->
+
+
+
+
+</LinearLayout>
